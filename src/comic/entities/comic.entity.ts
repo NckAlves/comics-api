@@ -18,5 +18,8 @@ export class Comic {
     author: string;
 
     @Column({default: false})
-    raro: boolean;
+    rare: boolean;
+
+    @Column()
+    cover: string;
 }

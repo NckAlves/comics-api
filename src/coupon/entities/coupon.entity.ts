@@ -6,5 +6,8 @@ export class Coupon {
     id: number;
     
     @Column()
-    raro: boolean;
+    rare: boolean;
+
+    @Column()
+    hash: string;
 }

@@ -15,6 +15,9 @@ export class CreateComicDto {
     edition: number;
 
     @IsBoolean()
-    raro: boolean;
+    rare: boolean;
+
+    @IsString()
+    cover: string;
 
 }

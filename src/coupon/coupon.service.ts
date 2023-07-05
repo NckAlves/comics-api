@@ -23,10 +23,6 @@ export class CouponService {
     return this.couponRepository.findOne({ where: { id } });
   }
 
-  update(id: number, updateCouponDto: UpdateCouponDto) {
-    return this.couponRepository.update(id, updateCouponDto);
-  }
-
   remove(id: number) {
     return this.couponRepository.delete(id);
   }

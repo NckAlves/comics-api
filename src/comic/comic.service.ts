@@ -13,15 +13,15 @@ export class ComicService {
   ) {}
 
   create(createComicDto: CreateComicDto) {
-    return this.comicRepository.save(createComicDto);;
+    return this.comicRepository.save(createComicDto);
   }
 
   findAll() {
-    return this.comicRepository.find();;
+    return this.comicRepository.find();
   }
 
   findOne(id: number) {
-    return this.comicRepository.findOne({ where: { id } });
+    return this.comicRepository.findOne({ where: { id } })
   }
 
   update(id: number, updateComicDto: UpdateComicDto) {

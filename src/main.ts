@@ -7,13 +7,13 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('DC Comics')
-    .setDescription('Abaixo você pode encontrar a documentação interativa de nossa API. Teste com cuidado, pois com grandes poderes vêm grandes responsabilidades.')
+    .setDescription('Truth, Justice and a Better Tomorrow.')
     .setVersion('1.0')
     .addTag('Comics')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
 
-  await app.listen(3000);
+  await app.listen(3001);
 }
 bootstrap();
