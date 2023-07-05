@@ -10,5 +10,9 @@
 
     "name": "Barry Allen",
     "email": "faster@man.alive",
-    "password": "1234567"
+    "password": "1234567",
+
+    "owner": "Isis",
+    "comicTitle": "Crise nas Infinitas Terras",
+    "couponHash": "24850"
 }

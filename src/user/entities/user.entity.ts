@@ -1,6 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { Model, Table, HasMany } from 'sequelize-typescript';
-
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Order } from 'src/order/entities/order.entity';
 
 @Entity()
 export class User {
@@ -16,6 +15,6 @@ export class User {
     @Column()
     password: string;
 
-    // @HasMany(() => Coupns)
-    // coupons: Coupon[];
+    @OneToMany(type => Order, order => order.owner)
+    orders: Order[]
 }

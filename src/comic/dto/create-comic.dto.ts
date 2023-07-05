@@ -19,5 +19,4 @@ export class CreateComicDto {
 
     @IsString()
     cover: string;
-
 }

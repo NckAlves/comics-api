@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { ComicModule } from './comic/comic.module';
 import { UserModule } from './user/user.module';
 import { CouponModule } from './coupon/coupon.module';
+import { OrderModule } from './order/order.module';
 
 @Module({
-  imports: [ComicModule, UserModule, CouponModule],
+  imports: [ComicModule, UserModule, CouponModule, OrderModule],
   controllers: [AppController],
   providers: [AppService],
 })
