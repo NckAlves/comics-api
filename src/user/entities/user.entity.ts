@@ -17,7 +17,7 @@ export class User {
     password: string;
 
     @OneToMany(type => Order, order => order.owner)
-    @JoinColumn()
+    // @JoinColumn()
     orders: Order[]
 
     @ManyToMany(() => Coupon, { eager: true })

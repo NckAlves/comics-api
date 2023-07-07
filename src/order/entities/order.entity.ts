@@ -9,7 +9,7 @@ export class Order {
     id: number;
 
     @ManyToOne(() => User, (user) => user.orders, { eager: true })
-    @JoinColumn()
+    // @JoinColumn()
     owner: string; //Quem pediu
 
     @Column()
