@@ -1,5 +1,7 @@
 import { IsBoolean, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { hashSync, hash } from 'bcrypt';
+import { BeforeInsert } from 'typeorm/decorator/listeners/BeforeInsert';
 
 export class CreateUserDto {
     @IsString()
@@ -12,5 +14,10 @@ export class CreateUserDto {
 
     @IsString()
     @ApiProperty({type: String})
-    senha: string;
+    password: string;
+
+    @BeforeInsert()
+    hashPassword() {
+        return this.password = hashSync(this.password, 10);
+    }
 }

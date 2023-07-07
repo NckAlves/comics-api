@@ -1,16 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn, ManyToMany, JoinTable, BeforeInsert } from 'typeorm';
 import { Order } from 'src/order/entities/order.entity';
 import { Coupon } from 'src/coupon/entities/coupon.entity';
+import * as bcrypt from 'bcrypt';
 
-@Entity()
+@Entity({name: 'user'})
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({length: 20})
+    @Column({ length: 20 })
     name: string;
 
-    @Column({length: 30})
+    @Column({ length: 30 })
     email: string;
 
     @Column()
@@ -23,4 +24,9 @@ export class User {
     @ManyToMany(() => Coupon, { eager: true })
     @JoinTable()
     coupons: Coupon[]
+
+    @BeforeInsert()
+    hashPassword() {
+        this.password = bcrypt.hashSync(this.password, 10)
+    }
 }
