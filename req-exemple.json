@@ -5,12 +5,14 @@
     "author": "Manapul",
     "raro": true,
     "cover": "https://user-images.githubusercontent.com/51276863/250995393-46de0500-29a2-470f-a810-4d267936fb7f.png",
-
+    
     "coupon_rare": true,
-
+    
     "name": "Barry Allen",
     "email": "faster@man.alive",
     "password": "1234567",
+    "orders": [],
+    "coupons": [],
 
     "owner": "Isis",
     "comicTitle": "Crise nas Infinitas Terras",

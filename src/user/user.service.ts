@@ -6,7 +6,6 @@ import { User } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
-
   constructor(
     @Inject('USER_REPOSITORY')
     private userRepository: Repository<User>,
@@ -17,7 +16,7 @@ export class UserService {
   }
 
   findAll() {
-    return this.userRepository.find({select: ['id', 'name', 'email']});
+    return this.userRepository.find({select: ['id', 'name', 'email', 'orders', 'coupons']});
   }
 
   findOne(id: number) {

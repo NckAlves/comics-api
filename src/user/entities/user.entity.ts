@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn, ManyToMany, JoinTable } from 'typeorm';
 import { Order } from 'src/order/entities/order.entity';
+import { Coupon } from 'src/coupon/entities/coupon.entity';
 
 @Entity()
 export class User {
@@ -16,5 +17,10 @@ export class User {
     password: string;
 
     @OneToMany(type => Order, order => order.owner)
+    @JoinColumn()
     orders: Order[]
+
+    @ManyToMany(() => Coupon, { eager: true })
+    @JoinTable()
+    coupons: Coupon[]
 }

@@ -6,6 +6,7 @@ import { Order } from './entities/order.entity';
 
 @Injectable()
 export class OrderService {
+
   constructor(
     @Inject('ORDER_REPOSITORY')
     private orderRepository: Repository<Order>
