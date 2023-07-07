@@ -15,12 +15,16 @@ export class UserService {
     return this.userRepository.save(createUserDto);
   }
 
-  findAll() {
-    return this.userRepository.find({select: ['id', 'name', 'email', 'orders', 'coupons']});
+  async findAll() {
+    return await this.userRepository.find({select: ['id', 'name', 'email', 'orders', 'coupons']});
   }
 
-  findOne(id: number) {
+  findById(id: number) {
     return this.userRepository.findOne({ where: { id } });
+  }
+
+  findOne(email: string) {
+    return this.userRepository.findOne({ where: { email } });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
