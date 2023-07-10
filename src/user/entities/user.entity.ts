@@ -3,7 +3,7 @@ import { Order } from 'src/order/entities/order.entity';
 import { Coupon } from 'src/coupon/entities/coupon.entity';
 import * as bcrypt from 'bcrypt';
 
-@Entity({name: 'user'})
+@Entity({ name: 'user' })
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
@@ -21,12 +21,8 @@ export class User {
     // @JoinColumn()
     orders: Order[]
 
-    @ManyToMany(() => Coupon, { eager: true })
+    @ManyToMany(() => Coupon, { cascade: true, })
     @JoinTable()
+    //{ eager: true }
     coupons: Coupon[]
-
-    @BeforeInsert()
-    hashPassword() {
-        this.password = bcrypt.hashSync(this.password, 10)
-    }
 }

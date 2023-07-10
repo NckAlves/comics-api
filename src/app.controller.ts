@@ -1,10 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import { ApiOperation } from '@nestjs/swagger';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  @ApiOperation({ summary: 'Some heroes save the day in the simplest of ways. By just being there for us, or letting us know we’re believed in.' })
   @Get()
   getHello(): string {
     //Some heroes save the day in the simplest of ways. By just being there for us, or letting us know we’re believed in.
