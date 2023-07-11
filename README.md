@@ -49,7 +49,7 @@ Importante destacar que o NestJS funciona sobreposto ao Express e traz o ESlint 
 
 ## Requisitos e Pré-requisitos
 
-- Para utilizar a API será preciso ter instalado o MySql e uma conexão com o bando de dados aberta.
+- Para utilizar a API será preciso ter instalado o MySql e uma conexão com o banco de dados aberta.
 
 - Em seu ambiente MySql crie o BD 'dc' com o seguinte comando: CREATE DATABASE  dc;
 
