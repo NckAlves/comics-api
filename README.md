@@ -118,7 +118,7 @@ Abaixo estão listados os métodos acessíveis de cada rota
 Acesse a rota  '/docs' para mais detalhes.
 
  **Porque Patch no lugar do Put?**
-Nos padrões de API Restfull, requisições Put devem ser utilizadas para alterar um objeto por completo, ou seja, todos os seus atributos. Enquanto o Patch pode ser implementado para qualquer número de alterações
+Nos padrões de API Restfull, requisições Put devem ser utilizadas para alterar um objeto por completo, ou seja, todos os seus atributos. Enquanto o Patch pode ser implementado para qualquer número de alterações. Esta é a forma padrão do NestJS trabalhar, então seguimos com essa abordagem.
 
 ## Entidades
 
