@@ -6,11 +6,12 @@ import { Comic } from './entities/comic.entity';
 
 @Injectable()
 export class ComicService {
+  userRepository: any;
 
   constructor(
     @Inject('COMIC_REPOSITORY')
     private comicRepository: Repository<Comic>
-  ) {}
+  ) { }
 
   create(createComicDto: CreateComicDto) {
     return this.comicRepository.save(createComicDto);

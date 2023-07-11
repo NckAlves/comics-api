@@ -1,4 +1,4 @@
-import { IsBoolean, IsInt, IsString } from 'class-validator';
+import { IsBoolean, IsInt, IsNumber, IsString } from 'class-validator';
 import { isNumberObject } from 'util/types';
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -9,7 +9,7 @@ export class CreateComicDto {
 
     @IsString()
     @ApiProperty({type: String})
-    chacacter: string;
+    character: string;
 
     @IsString()
     @ApiProperty({type: String})
@@ -22,6 +22,10 @@ export class CreateComicDto {
     @IsBoolean()
     @ApiProperty({type: Boolean})
     rare: boolean;
+
+    @IsNumber()
+    @ApiProperty({type: Number})
+    price: number;
 
     @IsString()
     @ApiProperty({type: String})

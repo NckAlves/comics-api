@@ -9,5 +9,8 @@ export class Coupon {
     rare: boolean;
 
     @Column()
+    value: number;
+
+    @Column()
     hash: string;
 }

@@ -21,5 +21,8 @@ export class Comic {
     rare: boolean;
 
     @Column()
+    price: number;
+
+    @Column()
     cover: string;
 }

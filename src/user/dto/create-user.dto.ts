@@ -1,4 +1,4 @@
-import { IsBoolean, IsString } from 'class-validator';
+import { IsBoolean, IsEmail, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { hashSync, hash } from 'bcrypt';
 import { BeforeInsert } from 'typeorm/decorator/listeners/BeforeInsert';
@@ -9,8 +9,8 @@ export class CreateUserDto {
     @ApiProperty({type: String})
     name: string;
 
-    @IsString()
     @ApiProperty({type: String})
+    @IsEmail()
     email: string;
 
     @IsString()
